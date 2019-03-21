@@ -19,7 +19,7 @@ The source code for the solution is located in the `src/main/java/com/example/Ti
 The soruce code for the unit tests is located in the `src/test/groovy/com/example/TimeFormatterSpec.groovy` file.
 
 # Run the Test Cases
-From the project directory run the following command.
+From the project directory run the following from the command line.
 
 `./gradlew clean test --info`
 
