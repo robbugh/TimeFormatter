@@ -16,7 +16,7 @@ Python, C++ or C# are particularly relevant to us. Please include any test cases
 
 # Solution
 The source code for the solution is located in the `src/main/java/com/example/TimeFormatter.java` file.
-The soruce code for the unit tests is located in the `src/test/groovy/com/example/TimeFormatterSpec.groovy` file.
+The source code for the unit tests is located in the `src/test/groovy/com/example/TimeFormatterSpec.groovy` file.
 
 # Run the Test Cases
 From the project directory run the following from the command line.
