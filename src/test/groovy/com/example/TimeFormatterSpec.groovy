@@ -90,6 +90,11 @@ class TimeFormatterSpec extends Specification {
         new TimeFormatter("12:00 AM").addMinutes(-1).format() == "11:59 PM"
         new TimeFormatter("11:59 AM").addMinutes(0).format() == "11:59 AM"
         new TimeFormatter("11:59 AM").addMinutes(1).format() == "12:00 PM"
+        new TimeFormatter("12:00 PM").addMinutes(0).format() == "12:00 PM"
+        new TimeFormatter("12:00 PM").addMinutes(1).format() == "12:01 PM"
+        new TimeFormatter("12:00 PM").addMinutes(-1).format() == "11:59 AM"
+        new TimeFormatter("11:59 PM").addMinutes(0).format() == "11:59 PM"
+        new TimeFormatter("11:59 PM").addMinutes(1).format() == "12:00 AM"
     }
 }
 

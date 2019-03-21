@@ -38,7 +38,9 @@ public class TimeFormatter {
                 hours = 0;
             }
             if (!isAM) {
-                hours += 12;
+                if (hours < 12) {
+                    hours += 12;
+                }
             }
             totalMinutes = (hours * 60) + minutes;
         } else {
