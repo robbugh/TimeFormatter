@@ -78,22 +78,27 @@ class TimeFormatterSpec extends Specification {
         thrown Exception
     }
 
-    def "test the methods"() {
+    def "test with no time added"() {
+        expect:
+        new TimeFormatter("0:00 AM").format() == "12:00 AM"
+        new TimeFormatter("12:00 AM").format() == "12:00 AM"
+        new TimeFormatter("12:00 PM").format() == "12:00 PM"
+        new TimeFormatter("0:00 AM").addMinutes(0).format() == "12:00 AM"
+        new TimeFormatter("12:00 AM").addMinutes(0).format() == "12:00 AM"
+        new TimeFormatter("12:00 PM").addMinutes(0).format() == "12:00 PM"
+    }
+
+    def "test with time added"() {
         expect:
         new TimeFormatter("1:00 AM").addMinutes(1440).format() == "1:00 AM"
         new TimeFormatter("1:00 AM").addMinutes(-1440).format() == "1:00 AM"
-        new TimeFormatter("0:00 AM").addMinutes(0).format() == "12:00 AM"
         new TimeFormatter("0:00 AM").addMinutes(1).format() == "12:01 AM"
         new TimeFormatter("0:00 AM").addMinutes(-1).format() == "11:59 PM"
-        new TimeFormatter("12:00 AM").addMinutes(0).format() == "12:00 AM"
         new TimeFormatter("12:00 AM").addMinutes(1).format() == "12:01 AM"
         new TimeFormatter("12:00 AM").addMinutes(-1).format() == "11:59 PM"
-        new TimeFormatter("11:59 AM").addMinutes(0).format() == "11:59 AM"
         new TimeFormatter("11:59 AM").addMinutes(1).format() == "12:00 PM"
-        new TimeFormatter("12:00 PM").addMinutes(0).format() == "12:00 PM"
         new TimeFormatter("12:00 PM").addMinutes(1).format() == "12:01 PM"
         new TimeFormatter("12:00 PM").addMinutes(-1).format() == "11:59 AM"
-        new TimeFormatter("11:59 PM").addMinutes(0).format() == "11:59 PM"
         new TimeFormatter("11:59 PM").addMinutes(1).format() == "12:00 AM"
     }
 }
